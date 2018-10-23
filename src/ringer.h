@@ -48,18 +48,18 @@ typedef rg_s*              rg_t; /**< Ringer pointer. */
 typedef rg_t*              rg_p; /**< Ringer pointer reference. */
 
 
-#ifdef RINGER_MEM_API
+#ifdef RINGER_USE_MEM_API
 
 /*
- * RINGER_MEM_API allows to use custom memory allocation functions,
+ * RINGER_USE_MEM_API allows to use custom memory allocation functions,
  * instead of the default: rg_malloc, rg_free, rg_realloc.
  *
- * If RINGER_MEM_API is used, the user must provide implementation for the
+ * If RINGER_USE_MEM_API is used, the user must provide implementation for the
  * below functions and they must be compatible with malloc etc.
  */
 
 extern void* rg_malloc( size_t size );
-extern void rg_free( void* ptr );
+extern void  rg_free( void* ptr );
 extern void* rg_realloc( void* ptr, size_t size );
 
 #else
